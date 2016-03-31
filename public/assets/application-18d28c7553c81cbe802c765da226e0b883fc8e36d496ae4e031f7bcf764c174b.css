@@ -9455,6 +9455,19 @@ th:after {
 
 /*FONT SIZES*/
 
+@font-face {
+    font-family: 'scapescape';
+    src: url('scape_copy-webfont.eot');
+    src: url('scape_copy-webfont.eot?#iefix') format('embedded-opentype'),
+         url('scape_copy-webfont.woff2') format('woff2'),
+         url('scape_copy-webfont.woff') format('woff'),
+         url('scape_copy-webfont.ttf') format('truetype'),
+         url('scape_copy-webfont.svg#scapescape') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.topper {margin-top:12px;}
 .descriptionSize1, .descriptionSize1 i, .descriptionSize1 h3 {font-size:15px!important;font-style:none!important;font-weight:normal!important;}
 .titleSize1 {font-size:16px!important;text-transform:uppercase!important;}
 li.navButton {font-size:14px!important;text-transform:uppercase!important;font-style:none!important;font-weight:normal!important;}
@@ -9472,7 +9485,8 @@ li.navButton {font-size:14px!important;text-transform:uppercase!important;font-s
 ul.navigation, ul.navigation2 {list-style-type: none;}
 .navigationWrapper {width:280px;margin:80px auto;}
 .navigation2 {margin:24px 0px 0px -35px;}
-.navigation a, .navigation2 a, .client {text-transform:uppercase;font-size:1.1em!important;color:#ffffff;font-family:'Raleway'}
+
+.navigation a, .navigation2 a, .client {text-transform:uppercase;font-size:2.4em!important;color:#ffffff;font-family:'scapescape';}
 li.navButton {margin:8px 0px 8px 0px!important;}
 .social {width:193px;margin:100px auto 0px auto;}
 .centerSocial {margin:0 auto;}
@@ -9546,7 +9560,7 @@ html, body {
 }
 .slideTitle {
 	width:210px;
-	height:195px;
+	height:180px;
 	position:absolute;
 	z-index:1000;
 	top:125px;
@@ -9556,7 +9570,14 @@ html, body {
 	background-color:rgba(0,0,0,0.4);padding:10px;
 }
 .slideTitle:hover {background-color:rgba(0,0,0,1);}
-.slideTitle h5 {font-size:20px;padding:0px 10px 10px 10px;margin-top:-5px;}
+.slideTitle h5 {
+	padding:0px 10px 10px 10px;
+	margin-top:-5px;
+	font-size:14px!important;
+	text-transform:uppercase!important;
+	font-style:none!important;
+	font-weight:normal!important;
+}
 .bigger {font-size:15px;text-align:left;}
 .bigger2 {font-size:14px;text-align:left;}
 
