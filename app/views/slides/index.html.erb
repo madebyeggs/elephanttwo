@@ -1,0 +1,48 @@
+<div class="">
+	<div class="royalSlider rsDefault">
+		<% @slides.each do |slide| %>
+		    <div>
+			<% if slide.slide_image? %>
+				<%= image_tag(slide.slide_image, class: "rsImg") %>
+			<% else %>
+				<%= image_tag(slide.image, class: "rsImg") %>
+			<% end %>
+				<div class="slideTitle">
+					<a href="<%= slide_path(slide) %>" class="slideShowClick">
+						<h5 class="bigger"><%=  simple_format(slide.slide_title) %></h5>
+					</a>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<script>
+
+	window.sliderId = 3;
+	console.log(sliderId);
+	
+	var sliderInstance = $('.royalSlider').royalSlider({
+		autoPlay: {
+			// autoplay options go gere
+	    	enabled: true,
+	    	pauseOnHover: false,
+			delay: 4000
+		},
+		imageAlignCenter: true,
+		imageScaleMode: 'fill',
+		loop: true,
+		arrowsNav: true
+	}).data("royalSlider");
+	
+	//sliderInstance.goTo(sliderId);
+	
+	sliderInstance.ev.on('rsBeforeAnimStart', function(event) {
+		$('.slideTitle').fadeOut();
+	});
+
+	sliderInstance.ev.on('rsAfterSlideChange', function(event) {
+		$('.slideTitle').fadeIn();
+	});
+		
+</script>
