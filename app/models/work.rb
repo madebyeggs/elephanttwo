@@ -27,8 +27,8 @@ class Work < ActiveRecord::Base
     :access_key_id => ENV['S3_KEY'],
     :secret_access_key => ENV['S3_SECRET'] },
     :url => ':s3_alias_url',
-    :s3_host_alias => 'd9gj9tfjl21as.cloudfront.net', 
-    :bucket => 'split-two',
+    :s3_host_alias => 'dpyn2hq0qgwcx.cloudfront.net', 
+    :bucket => 'elephant-two',
     :path => "works/images/:id_partition/:style/:filename"
   end
   
@@ -46,8 +46,8 @@ class Work < ActiveRecord::Base
     :access_key_id => ENV['S3_KEY'],
     :secret_access_key => ENV['S3_SECRET'] },
     :url => ':s3_alias_url',
-    :s3_host_alias => 'd9gj9tfjl21as.cloudfront.net', 
-    :bucket => 'split-two',
+    :s3_host_alias => 'dpyn2hq0qgwcx.cloudfront.net', 
+    :bucket => 'elephant-two',
     :path => "works/fb_images/:id_partition/:style/:filename"
   end
   

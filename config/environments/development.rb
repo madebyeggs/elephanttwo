@@ -54,4 +54,7 @@ Rails.application.configure do
     :styles => {:main => '1200X630>'},
     :convert_options => { :all => '-quality 80' }
   }
+  
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.precompile += %w( .svg .eot .woff .ttf)
 end
