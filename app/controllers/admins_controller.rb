@@ -35,7 +35,7 @@ class AdminsController < ApplicationController
   
   def slideshow
     define_slides
-    @slides = @slide_announcements + @slide_artists
+    @slides = @slide_works + @slide_announcements
     respond_to do |format|
       format.html
       format.json {render :json => @slides}
