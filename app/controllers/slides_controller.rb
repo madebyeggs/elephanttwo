@@ -9,7 +9,7 @@ class SlidesController < ApplicationController
     }
     set_meta_tags twitter: {
       card: "summary_large_image",
-      site: "@fairsplitmusic",
+      site: "",
       title: "Elephant Music | News",
       description: "Unique Music to Picture"
     }

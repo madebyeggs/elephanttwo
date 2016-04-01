@@ -53,7 +53,7 @@ class WorksController < ApplicationController
       }
       set_meta_tags twitter: {
         card: "summary_large_image",
-        site: "@fairsplitmusic",
+        site: "",
         title: "Elephant Music | Placements",
         description: "Unique Music to Picture"
       }
@@ -70,7 +70,7 @@ class WorksController < ApplicationController
       }
       set_meta_tags twitter: {
         card: "summary_large_image",
-        site: "@fairsplitmusic",
+        site: "",
         title: "#{@work.campaign_title}",
         description: "#{@work.description}",
         image: "#{@work.fb_image}"
