@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324152854) do
+ActiveRecord::Schema.define(version: 20161010161109) do
 
   create_table "announcements", force: :cascade do |t|
     t.text     "slide_title"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160324152854) do
     t.integer  "fb_image_file_size"
     t.datetime "fb_image_updated_at"
     t.boolean  "slideshow"
+    t.integer  "slideshowposition"
   end
 
   add_index "announcements", ["slug"], name: "index_announcements_on_slug", unique: true
@@ -154,6 +155,7 @@ ActiveRecord::Schema.define(version: 20160324152854) do
     t.datetime "slide_image_updated_at"
     t.boolean  "slideshow"
     t.string   "soundcloud"
+    t.integer  "slideshowposition"
   end
 
   add_index "works", ["slug"], name: "index_works_on_slug", unique: true
