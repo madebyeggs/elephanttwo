@@ -5,6 +5,18 @@ class Work < ActiveRecord::Base
   
   require 'csv'
   
+  def image_url
+    image.url
+  end
+  
+  def fb_image_url
+    fb_image.url
+  end
+  
+  def slide_image_url
+    slide_image.url
+  end
+  
   def self.import(file)
     CSV.foreach(file.path, headers:true) do |row|
       work = Work.find_or_initialize_by(campaign_title: row["campaign_title"])
@@ -14,7 +26,7 @@ class Work < ActiveRecord::Base
   end
   
   def self.to_csv
-    attributes = %w{brand_name campaign_title agency track_name artist_name description vimeo platform}
+    attributes = %w{id brand_name campaign_title agency track_name artist_name description vimeo platform image_url fb_image_url slide_image_url}
     CSV.generate(headers: true) do |csv|
       csv << attributes
       all.each do |user|
