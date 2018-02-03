@@ -13,6 +13,16 @@ class Work < ActiveRecord::Base
     end
   end
   
+  def self.to_csv
+    attributes = %w{brand_name campaign_title agency track_name artist_name description vimeo platform}
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+      all.each do |user|
+        csv << attributes.map{ |attr| user.send(attr) }
+      end
+    end
+  end
+  
   include RankedModel
   ranks :row_order
   
