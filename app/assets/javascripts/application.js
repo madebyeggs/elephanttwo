@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap
 //= require jquery.turbolinks
 //= require 'rest_in_place'
 //= require best_in_place
@@ -22,7 +23,6 @@
 //= require nprogress-turbolinks
 //= require lazyload
 //= require update_works_row_order
-//= require update_announcements_row_order
 //= require jquery.slicknav
 //= require jquery.prettySocial
 //= require imagesloaded
