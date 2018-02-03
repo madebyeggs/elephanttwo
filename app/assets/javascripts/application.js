@@ -21,31 +21,62 @@
 //= require nprogress
 //= require nprogress-turbolinks
 //= require lazyload
-//= require update_artists_row_order
 //= require update_works_row_order
-//= require update_releases_row_order
 //= require update_announcements_row_order
 //= require jquery.slicknav
 //= require jquery.prettySocial
-//= require jquery.fitvids
 //= require imagesloaded
 //= require jquery.easing-1.3
 //= require jquery.royalslider.min
 //= require underscore
-//= require gmaps/google
 //= require FB_SDK
+//= require lazysizes_rails
+//= require fitvids.js
+//= require plyr
+//= require iscroll
+//= require drawer
 
 $(document).ready(function(){
+	
+	$(".change").on("ajax:success",function(){
+	    location.reload();
+	});
+	
+	$(".lazy").lazyload();
+	
+	$('.customBrandIcon').click(function(){
+	    $('.subMenu').slideToggle('fast');
+	});
+	
+	$('.customBrandIcon2').click(function(){
+	    $('.subMenu2').slideToggle('fast');
+	});
+	$('.customBrandIcon3').click(function(){
+	    $('.subMenu3').slideToggle('fast');
+	});
+	
+	$('.envelopeDropdowner').click(function(){
+	    $('.subMenu2').slideToggle('fast');
+	});
+	
+	$('.envelopeDropdowner2').click(function(){
+	    $('.subMenu3').slideToggle('fast');
+	});
+	
+//	$('.my_iFrame').load(function() {
+//		$('.loading').css('display', 'none');
+//		$('.js #my_iFrame').css('visibility', 'visible');
+//	});
+	
+//	$('.plyr').load(function() {
+//	  	$('.loading').css('display', 'none');
+//	  	$('.js #my_iFrame').css('visibility', 'visible');
+//	});
 	
 	var position = 0
 	$("#artistScrollPosition").animate({ scrollTop: window.position });
 	$("#workScrollPosition").animate({ scrollTop: window.position });
 	$("#releaseScrollPosition").animate({ scrollTop: window.position });
-	
-	$(".lazy").lazyload({
-		effect : "fadeIn",
-		threshold : 400
-	});
 	
 	$(".clearFixer").click(function(){
 		window.position = 0
@@ -92,16 +123,41 @@ $(document).ready(function(){
 	    }
 	});
 	
-	//mobileNavMenu
-	$(function(){
-		$('#menu').slicknav();
-	});
-	
 	$('.prettySocial').prettySocial();
 	
-	$('.fitvids').fitVids();
+	$('.responsiveVideo').fitVids();
+	$('.responsiveVideo2').fitVids();
+	
+	var options = {clickToPlay: true, controls: ['fullscreen']}
+	
+	plyr.setup(document.querySelectorAll('.js-player'), options);
 	
   	jQuery(".best_in_place").best_in_place();
+
+	$('#myTabs a').click(function (e) {
+	  e.preventDefault()
+	  $(this).tab('show')
+	});
+	
+	$('.drawer').drawer();
+	if ($(window).width() < 991) { 
+		$(".drawerMobileFix").addClass( "drawer--top" );
+		$(".draw-left").hide();
+		$(".draw-top").show();
+	} else { 
+		$(".drawerMobileFix").addClass( "drawer--left" );
+		$(".draw-top").hide();
+		$(".draw-left").show();
+	}
+	
+	if ($(window).width() < 992) {
+		$('.videoDesktop').hide();
+		$('.videoMobile').show();
+	}
+	else {
+	   	$('.videoDesktop').show();
+		$('.videoMobile').hide();
+	}
 	
 });
 $(function() {

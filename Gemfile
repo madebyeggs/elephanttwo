@@ -30,6 +30,9 @@ gem 'imagesLoaded_rails'
 gem 'best_in_place', '~> 3.0.1'
 gem 'gmaps4rails'
 gem 'newrelic_rpm'
+gem 'lazysizes_rails'
+gem 'fitvidsjs_rails'
+gem 'plyr-rails'
 
 group :development, :test do
   gem 'byebug'
