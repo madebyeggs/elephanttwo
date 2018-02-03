@@ -33,14 +33,14 @@ class Work < ActiveRecord::Base
   
   def self.import(file)
     CSV.foreach(file.path, headers:true) do |row|
-      work = Work.find_or_initialize_by(campaign_title: row["campaign_title"])
+      work = Work.find_or_initialize_by(campaign_title: row["id"])
       work.assign_attributes(row.to_hash)
       work.save!
     end
   end
   
   def self.to_csv
-    attributes = %w{brand_name campaign_title agency track_name artist_name description vimeo platform slideshow slide_title image_url fb_image_url slide_image_url}
+    attributes = %w{id brand_name campaign_title agency track_name artist_name description vimeo platform slideshow slide_title image_url fb_image_url slide_image_url}
     CSV.generate(headers: true) do |csv|
       csv << attributes
       all.each do |user|

@@ -12,10 +12,10 @@ class AdminsController < ApplicationController
   def placements
     @works = Work.search(params[:search]).rank(:row_order).all
     #     UN-BLOCK FOR CSV EXPORT - WILL MAKE SEARCH STOP WORKING THOUGH
-    #     respond_to do |format|
-    #       format.html
-    #       format.csv { send_data @works.to_csv }
-    #     end
+         respond_to do |format|
+           format.html
+           format.csv { send_data @works.to_csv }
+         end
   end
   
   def releases
