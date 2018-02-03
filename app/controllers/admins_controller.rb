@@ -10,10 +10,10 @@ class AdminsController < ApplicationController
   end
   
   def placements
-    @works = Work.rank(:row_order).all
+    @works = Work.search(params[:search]).rank(:row_order).all
     respond_to do |format|
       format.html
-      format.json {render :json => @works}
+      format.csv { send_data @works.to_csv }
     end
   end
   

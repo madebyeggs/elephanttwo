@@ -104,3 +104,10 @@ $(document).ready(function(){
   	jQuery(".best_in_place").best_in_place();
 	
 });
+$(function() {
+	$("#works_search input").keyup(function(e) {
+    	$.get($("#works_search").attr("action"), $("#works_search").serialize(), null, "script");
+    	return false;
+		e.PreventDefault()
+  	});
+});

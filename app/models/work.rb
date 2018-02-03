@@ -73,4 +73,17 @@ class Work < ActiveRecord::Base
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :slide_image, :content_type => /\Aimage\/.*\Z/
   
+  def self.search(search)
+    if search.to_s.include? "slide"
+      where('slideshow = TRUE') # Needs to be - where('slideshow = "t"') in development and - where('slideshow = TRUE') in production
+    elsif search.to_s.include? "news"
+      where('newsletter = TRUE')
+    elsif search
+      where('LOWER(brand_name) LIKE :search OR LOWER(campaign_title) LIKE :search 
+      OR LOWER(agency) LIKE :search OR LOWER(vimeo) LIKE :search OR LOWER(platform) LIKE :search', search: "%#{search}%")
+    else
+      all
+    end
+  end
+  
 end

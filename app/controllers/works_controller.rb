@@ -91,9 +91,19 @@ class WorksController < ApplicationController
       @work = Work.find(params[:id])
     end
     
+    def self.to_csv
+      attributes = %w{brand_name campaign_title agency track_name artist_name description vimeo platform}
+      CSV.generate(headers: true) do |csv|
+        csv << attributes
+        all.each do |work|
+          csv << attributes.value_at(*attributes)
+        end
+      end
+    end
+    
     def work_params
       params.require(:work).permit(:work_id, :brand_name, :campaign_title, :agency, :track_name, :artist_name, :description, 
-      :image, :fb_image, :slideshow, :slide_image, :slide_title, :row_order_position, :vimeo, :slideshowposition)
+      :image, :fb_image, :slideshow, :slide_image, :slide_title, :row_order_position, :vimeo, :slideshowposition, :platform)
     end
   
 end
