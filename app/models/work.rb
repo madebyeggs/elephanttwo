@@ -26,7 +26,7 @@ class Work < ActiveRecord::Base
   end
   
   def self.to_csv
-    attributes = %w{brand_name campaign_title agency track_name artist_name description vimeo platform image_url fb_image_url slide_image_url slideshow slide_title}
+    attributes = %w{brand_name campaign_title agency track_name artist_name description vimeo platform slideshow slide_title image_url fb_image_url slide_image_url}
     CSV.generate(headers: true) do |csv|
       csv << attributes
       all.each do |user|
