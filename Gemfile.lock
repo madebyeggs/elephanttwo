@@ -84,7 +84,6 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    gmaps4rails (2.1.2)
     i18n (0.7.0)
     imagesLoaded_rails (4.1.0)
       railties (>= 3.1)
@@ -231,13 +230,13 @@ DEPENDENCIES
   best_in_place (~> 3.0.1)
   bootstrap_form
   byebug
+  cocaine (~> 0.5.4)
   coffee-rails (~> 4.1.0)
   devise
   figaro
   fitvidsjs_rails
   font-awesome-rails
   friendly_id (~> 5.1.0)
-  gmaps4rails
   imagesLoaded_rails
   jbuilder (~> 2.0)
   jquery-rails
@@ -249,7 +248,7 @@ DEPENDENCIES
   meta-tags
   newrelic_rpm
   nprogress-rails
-  paperclip
+  paperclip (~> 4.2)
   pg
   plyr-rails
   rails (= 4.2.5.1)

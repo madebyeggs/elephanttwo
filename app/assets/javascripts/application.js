@@ -44,39 +44,8 @@ $(document).ready(function(){
 	
 	$(".lazy").lazyload();
 	
-	$('.customBrandIcon').click(function(){
-	    $('.subMenu').slideToggle('fast');
-	});
-	
-	$('.customBrandIcon2').click(function(){
-	    $('.subMenu2').slideToggle('fast');
-	});
-	$('.customBrandIcon3').click(function(){
-	    $('.subMenu3').slideToggle('fast');
-	});
-	
-	$('.envelopeDropdowner').click(function(){
-	    $('.subMenu2').slideToggle('fast');
-	});
-	
-	$('.envelopeDropdowner2').click(function(){
-	    $('.subMenu3').slideToggle('fast');
-	});
-	
-//	$('.my_iFrame').load(function() {
-//		$('.loading').css('display', 'none');
-//		$('.js #my_iFrame').css('visibility', 'visible');
-//	});
-	
-//	$('.plyr').load(function() {
-//	  	$('.loading').css('display', 'none');
-//	  	$('.js #my_iFrame').css('visibility', 'visible');
-//	});
-	
 	var position = 0
-	$("#artistScrollPosition").animate({ scrollTop: window.position });
 	$("#workScrollPosition").animate({ scrollTop: window.position });
-	$("#releaseScrollPosition").animate({ scrollTop: window.position });
 	
 	$(".clearFixer").click(function(){
 		window.position = 0

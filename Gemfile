@@ -19,7 +19,8 @@ gem 'devise'
 gem 'bootstrap_form'
 gem "lazyload-rails"
 gem 'jquery-turbolinks'
-gem 'paperclip'
+gem "paperclip", "~> 4.2"
+gem 'cocaine', '~> 0.5.4'
 gem 'aws-sdk', '< 2.0'
 gem 'ranked-model'
 gem "font-awesome-rails"
@@ -28,7 +29,6 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'rest_in_place'
 gem 'imagesLoaded_rails'
 gem 'best_in_place', '~> 3.0.1'
-gem 'gmaps4rails'
 gem 'newrelic_rpm'
 gem 'lazysizes_rails'
 gem 'fitvidsjs_rails'
